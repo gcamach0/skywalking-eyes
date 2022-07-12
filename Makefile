@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-HUB ?= docker.io/apache
-PROJECT ?= license-eye
+HUB ?= docker.io/gcamach0
+PROJECT ?= multi-arch-test
 VERSION ?= latest
 OUT_DIR = bin
 ARCH := $(shell uname)
