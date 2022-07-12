@@ -20,14 +20,14 @@ name: publish-docker
 on:
   push:
     branches:
-      - main
+      - multi-arch-support
 
 env:
-  HUB: ghcr.io/apache/skywalking-eyes
+  HUB: docker.io/gcamach0/skywalking-eyes
 
 jobs:
   build:
-    if: github.repository == 'apache/skywalking-eyes'
+    if: github.repository == 'gcamach0/skywalking-eyes'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -50,8 +50,8 @@ jobs:
         uses: docker/login-action@v1.10.0
         with:
           registry: ${{ env.HUB }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push docker image
         run: |
           make docker && make docker-push
