@@ -25,7 +25,7 @@ on:
       - multi-arch-support
 
 env:
-  HUB: docker.io/gcamach0/multi-arch-test
+  HUB: docker.io/gcamach0/license-eye
 
 jobs:
   build:
@@ -57,7 +57,5 @@ jobs:
       - name: Build and push docker image
         run: |
           make docker && make docker-push
-          docker images ls
           docker tag $HUB/license-eye:$VERSION $HUB/license-eye:latest
-          docker images ls
           docker push $HUB/license-eye:latest

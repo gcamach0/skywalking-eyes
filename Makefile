@@ -70,7 +70,7 @@ build: windows linux darwin
 
 .PHONY: docker
 docker:
-	docker build . -t $(HUB)/multi-arch-test:$(VERSION)
+	docker build . -t $(HUB)/license-eye:$(VERSION)
 
 .PHONY: docker-push
 docker-push:
