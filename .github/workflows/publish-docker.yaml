@@ -25,7 +25,7 @@ on:
       - multi-arch-support
 
 env:
-  HUB: docker.io/gcamach0/skywalking-eyes
+  HUB: docker.io/gcamach0/multi-arch-test
 
 jobs:
   build:
