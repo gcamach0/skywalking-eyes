@@ -16,7 +16,7 @@
 # under the License.
 
 HUB ?= docker.io/gcamach0
-PROJECT ?= multi-arch-test
+PROJECT ?= license-eye
 VERSION ?= latest
 OUT_DIR = bin
 ARCH := $(shell uname)
@@ -70,7 +70,7 @@ build: windows linux darwin
 
 .PHONY: docker
 docker:
-	docker build . -t $(HUB)/$(PROJECT):$(VERSION)
+	docker build . -t $(HUB)/multi-arch-test:$(VERSION)
 
 .PHONY: docker-push
 docker-push:
